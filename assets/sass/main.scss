@@ -16,6 +16,29 @@ $primary-font: "Roboto", sans-serif;
 $logo-font: "Shrikhand", cursive;
 $font-size-title: 24px;
 
+@mixin primary-font-regular() {
+  font-family: $primary-font;
+  font-weight: 500;
+}
+
+@mixin gradient-button($color-1, $color-2) {
+  background: linear-gradient(200.64deg, $color-1 -5.2%, $color-2 110.74%);
+}
+@mixin gradient-button-hover($color-1, $color-2) {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15)
+    ),
+    linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
+}
+
+$gradient-heart: linear-gradient(
+  193.33deg,
+  $purple-gradient -11.44%,
+  $pink-gradient 123.93%
+);
+
 * {
   margin: 0;
   padding: 0;
@@ -24,31 +47,38 @@ $font-size-title: 24px;
 /* Composants */
 
 // Section Title Text
-.section-title {
+.section__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #c4c4c4;
+  color: $black;
 }
 // Paragraph Text
-.paragraph {
+.section__paragraph {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
-  color: #c4c4c4;
+  color: $grey;
 }
 // Button Text
-.btn {
+.btn__text {
   font-family: $primary-font;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color: #c4c4c4;
+
+  &--white {
+    color: white;
+  }
+  &--black {
+    color: $black;
+  }
 }
 
 // Section Title 2 Text
@@ -90,12 +120,29 @@ $font-size-title: 24px;
   }
 }
 
+.btn {
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  padding: 13px 18.75px;
+  @include gradient-button($purple-gradient, $pink-gradient);
+  &:hover {
+    @include gradient-button-hover($purple-gradient, $pink-gradient);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  }
+}
+
 /* Header */
 
 .header {
   nav {
     height: 63px;
-    position: relative;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+
     //box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   }
   .location {
@@ -108,14 +155,76 @@ $font-size-title: 24px;
     box-shadow: inset 0px 4px 4px -2px rgba(0, 0, 0, 0.15);
   }
 }
+
+/* INDEX PAGE */
 main {
   .hero {
-    height: 287px;
     background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 39.5px 0 57px 0;
+    h1,
+    p {
+      text-align: center;
+    }
+    p {
+      margin-top: 18px;
+      margin-bottom: 27px;
+    }
   }
   .functioning {
-    height: 440px;
-    background-color: #008766;
+    padding: 48px 20px 68px 20px;
+    &__wrapper__card {
+      display: flex;
+      flex-direction: column;
+      gap: 25.5px;
+      align-items: flex-end;
+    }
+    &__card {
+      width: 322.49px;
+      height: 72.38px;
+      background: $background-color;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      counter-increment: section;
+      i {
+        margin-left: 30px;
+        color: $grey-tint-4;
+      }
+      &__p {
+        font-size: 16px;
+        @include primary-font-regular();
+      }
+      &::before {
+        content: counter(section);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        color: $white;
+        background-color: $primary-color;
+        width: 24px;
+        height: 24px;
+        border-radius: 25px;
+        display: grid;
+        place-items: center;
+        @include primary-font-regular();
+        font-size: 14.1818px;
+      }
+      &:hover {
+        i {
+          color: $primary-color;
+        }
+      }
+    }
+    h2 {
+      margin-bottom: 26px;
+    }
   }
   .restaurants {
     height: 1226px;

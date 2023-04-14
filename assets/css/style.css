@@ -5,31 +5,37 @@
 }
 
 /* Composants */
-.section-title {
+.section__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #c4c4c4;
+  color: #101010;
 }
 
-.paragraph {
+.section__paragraph {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
-  color: #c4c4c4;
+  color: #353535;
 }
 
-.btn {
+.btn__text {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color: #c4c4c4;
+}
+.btn__text--white {
+  color: white;
+}
+.btn__text--black {
+  color: #101010;
 }
 
 .section-title-2 {
@@ -66,10 +72,26 @@
   color: #c4c4c4;
 }
 
+.btn {
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  padding: 13px 18.75px;
+  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
+}
+.btn:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
 /* Header */
 .header nav {
   height: 63px;
-  position: relative;
+  display: grid;
+  justify-content: center;
+  place-items: center;
 }
 .header .location {
   height: 50px;
@@ -81,13 +103,74 @@
   box-shadow: inset 0px 4px 4px -2px rgba(0, 0, 0, 0.15);
 }
 
+/* INDEX PAGE */
 main .hero {
-  height: 287px;
   background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 39.5px 0 57px 0;
+}
+main .hero h1,
+main .hero p {
+  text-align: center;
+}
+main .hero p {
+  margin-top: 18px;
+  margin-bottom: 27px;
 }
 main .functioning {
-  height: 440px;
-  background-color: #008766;
+  padding: 48px 20px 68px 20px;
+}
+main .functioning__wrapper__card {
+  display: flex;
+  flex-direction: column;
+  gap: 25.5px;
+  align-items: flex-end;
+}
+main .functioning__card {
+  width: 322.49px;
+  height: 72.38px;
+  background: #f6f6f6;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  counter-increment: section;
+}
+main .functioning__card i {
+  margin-left: 30px;
+  color: #7e7e7e;
+}
+main .functioning__card__p {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+main .functioning__card::before {
+  content: counter(section);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  background-color: #9356dc;
+  width: 24px;
+  height: 24px;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14.1818px;
+}
+main .functioning__card:hover i {
+  color: #9356dc;
+}
+main .functioning h2 {
+  margin-bottom: 26px;
 }
 main .restaurants {
   height: 1226px;
