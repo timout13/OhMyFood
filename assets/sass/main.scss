@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+
+$background-color: #f6f6f6;
+$primary-color: #9356dc;
+$blue: #99e2d0;
+$green-font: #008766;
+$white: #ffffff;
+$black: #101010;
+$grey: #353535;
+$pink-gradient: #ff79da;
+$purple-gradient: #9356dc;
+$grey-2: #eaeaea;
+$primary-2: #f5edff;
+$grey-tint-4: #7e7e7e;
+$primary-font: "Roboto", sans-serif;
+$logo-font: "Shrikhand", cursive;
+$font-size-title: 24px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Composants */
+
+// Section Title Text
+.section-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #c4c4c4;
+}
+// Paragraph Text
+.paragraph {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #c4c4c4;
+}
+// Button Text
+.btn {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #c4c4c4;
+}
+
+// Section Title 2 Text
+
+.section-title-2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #c4c4c4;
+}
+
+//Menu
+.menu {
+  .menu-price {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #c4c4c4;
+  }
+  .menu-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #c4c4c4;
+  }
+  .menu-detail {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #c4c4c4;
+  }
+}
+
+/* Header */
+
+.header {
+  nav {
+    height: 63px;
+    position: relative;
+    //box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  .location {
+    height: 50px;
+    background-color: $grey-2;
+    padding: 15.5px 0 15.5px 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    box-shadow: inset 0px 4px 4px -2px rgba(0, 0, 0, 0.15);
+  }
+}
+main {
+  .hero {
+    height: 287px;
+    background-color: $background-color;
+  }
+  .functioning {
+    height: 440px;
+    background-color: #008766;
+  }
+  .restaurants {
+    height: 1226px;
+    background-color: $background-color;
+  }
+}
+footer {
+  height: 186px;
+  background-color: $grey;
+}
