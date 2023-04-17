@@ -173,13 +173,99 @@ main .functioning h2 {
   margin-bottom: 26px;
 }
 main .restaurants {
-  height: 1226px;
+  padding: 54px 18px 66px 18px;
   background-color: #f6f6f6;
+}
+main .restaurants__wrapper__card {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+main .restaurants__card {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: #ffffff;
+  position: relative;
+  height: 251px;
+  overflow-y: scroll;
+}
+main .restaurants__card a {
+  text-decoration: none;
+  color: #101010;
+}
+main .restaurants__card img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 174px;
+}
+main .restaurants__card:nth-child(1)::after, main .restaurants__card:nth-child(2)::after {
+  content: "Nouveau";
+  color: #008766;
+  background-color: #99e2d0;
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  width: 80px;
+  height: 29px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  display: grid;
+  place-items: center;
+}
+main .restaurants__card__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 25px 0px 13px;
+}
+main .restaurants__card__content h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+main .restaurants__card__content p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 20px;
+}
+main .restaurants .fa-heart {
+  color: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
 }
 
 footer {
-  height: 186px;
+  padding: 25px 22px;
   background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+footer .footer__link {
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+}
+footer .footer__link--font-regular {
+  font-weight: 500;
+}
+footer .footer__link i {
+  margin-right: 10px;
+}
+footer .footer__link .fa-handshake {
+  transform: rotate(315deg);
+}
+footer svg {
+  margin-bottom: 9px;
+}
+footer svg path {
+  fill: white;
 }
 
 /*# sourceMappingURL=style.css.map */
