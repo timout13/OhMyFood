@@ -44,7 +44,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  color: #c4c4c4;
+  color: #101010;
 }
 
 .menu__img {
@@ -53,11 +53,68 @@
   z-index: 1;
 }
 .menu__card {
-  background-color: red;
+  background-color: #f6f6f6;
   border-radius: 40px 40px 0px 0px;
+  padding: 32px 13px 40px 13px;
   margin-top: -40px;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.menu__card__title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  column-gap: 50px;
+}
+.menu__card__title__text {
+  font-family: "Shrikhand", cursive;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 41px;
+  color: #101010;
+}
+.menu__card__title i {
+  font-size: 22px;
+}
+.menu__card .menu__meal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu__card .menu__meal__step {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+.menu__card .menu__meal .meal__content {
+  background-color: #ffffff;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  border-radius: 15.0431px;
+  padding: 12px 15px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "h3 price" "subH3 price";
+}
+.menu__card .menu__meal .meal__content__title {
+  grid-area: h3;
+}
+.menu__card .menu__meal .meal__content__subtitle {
+  grid-area: subH3;
+}
+.menu__card .menu__meal .meal__content__price {
+  grid-area: price;
+  place-self: baseline;
+  grid-row: 2;
+  justify-self: flex-end;
 }
 .menu .menu-price {
   font-family: "Roboto";
