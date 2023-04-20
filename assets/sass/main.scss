@@ -117,6 +117,26 @@ $gradient-heart: linear-gradient(
   line-height: 21px;
   color: $grey;
 }
+//Menu Text
+.menu__text {
+  @include primary-font-regular();
+  line-height: 18px;
+  counter-reset: $black;
+  &__price {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  &__detail {
+    font-weight: 300;
+    font-size: 15px;
+  }
+}
+
 // Button Text
 .btn__text {
   font-family: $primary-font;
@@ -180,6 +200,14 @@ $gradient-heart: linear-gradient(
       gap: 12px;
       &__step {
         @include font-menu-meal-step();
+        &::after {
+          content: "";
+          display: block;
+          background-color: $blue;
+          width: 40px;
+          height: 3px;
+          margin-top: 5px;
+        }
       }
       .meal__content {
         background-color: $white;
@@ -188,14 +216,14 @@ $gradient-heart: linear-gradient(
         padding: 12px 15px;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 8fr 1fr;
         grid-template-areas:
           "h3 price"
           "subH3 price";
         &__title {
           grid-area: h3;
         }
-        &__subtitle {
+        &__detail {
           grid-area: subH3;
         }
         &__price {
@@ -206,30 +234,9 @@ $gradient-heart: linear-gradient(
         }
       }
     }
-  }
-  .menu-price {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    color: #c4c4c4;
-  }
-  .menu-title {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #c4c4c4;
-  }
-  .menu-detail {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 18px;
-    color: #c4c4c4;
+    .btn {
+      align-self: center;
+    }
   }
 }
 
