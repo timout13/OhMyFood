@@ -86,6 +86,31 @@ $font-size-title: 24px;
     linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
 }
 
+$breakpoints: (
+  "tablet-up": 768px,
+  "tablet-down": 900px,
+  "desktop-up": 1024px,
+  "desktop-down": 1280px,
+  "widescreen-up": 1440px,
+);
+
+@mixin media-min($_key) {
+  @media screen and (min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
+
+%spacing-menu-page {
+  @each $_key, $_value in $breakpoints {
+    @include media-min($_key) {
+      margin: -40px calc($_value * 0.268 / 2) 0px calc($_value * 0.268 / 2);
+      padding: 51px calc($_value * 0.146) 40px calc($_value * 0.146) !important;
+    }
+  }
+}
+
 $gradient-heart: linear-gradient(
   193.33deg,
   $purple-gradient -11.44%,
@@ -153,6 +178,26 @@ $gradient-heart: linear-gradient(
     color: $black;
   }
 }
+// Like
+.heart__animation {
+  &--show {
+    &:hover {
+      display: none;
+    }
+    &:hover + .heart__animation--hide {
+      display: block !important;
+    }
+  }
+  &--hide {
+    display: none !important;
+    &:hover {
+      display: block !important;
+    }
+    &:hover + .heart__animation--show {
+      display: none !important;
+    }
+  }
+}
 
 // Section Title 2 Text
 
@@ -182,11 +227,17 @@ $gradient-heart: linear-gradient(
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @extend %spacing-menu-page;
+
     &__title {
       display: flex;
       flex-direction: row;
       align-items: baseline;
       column-gap: 50px;
+      @include media-min("tablet-up") {
+        justify-content: center;
+      }
       &__text {
         @include font-menu-title();
       }
@@ -210,13 +261,14 @@ $gradient-heart: linear-gradient(
         }
       }
       .meal__content {
+        position: relative;
         background-color: $white;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
         padding: 12px 15px;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 8fr 1fr;
+        grid-template-columns: 9fr 1fr;
         grid-template-areas:
           "h3 price"
           "subH3 price";
@@ -257,13 +309,27 @@ $gradient-heart: linear-gradient(
 /* Header */
 
 .header {
-  nav {
+  .navbar {
     height: 63px;
     display: grid;
-    justify-content: center;
-    place-items: center;
     position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    &__link {
+      align-self: center;
+      margin-left: 20px;
+      color: $black;
+      :visited {
+        color: $black;
+      }
+      &--hide {
+        display: none;
+      }
+    }
+    &__img {
+      align-self: center;
+      grid-column-start: 2;
+    }
   }
   .location {
     height: 50px;

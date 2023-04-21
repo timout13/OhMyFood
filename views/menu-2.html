@@ -11,8 +11,9 @@
 
 <body>
   <header class="header">
-    <nav>
-      <img src="../assets/images/logo/ohmyfood@2x.svg" />
+    <nav class="navbar">
+      <a href="../index.html" class="navbar__link navbar__link--show"><i class="fa-solid fa-arrow-left"></i></a>
+      <img src="../assets/images/logo/ohmyfood@2x.svg" class="navbar__img" />
     </nav>
   </header>
   <main>
@@ -22,7 +23,8 @@
       <div class="menu__card">
         <div class="menu__card__title">
           <h1 class="menu__card__title__text">Le délice des sens</h1>
-          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-heart heart__animation heart__animation--show"></i>
+          <i class="fa-solid fa-heart heart__animation heart__animation--hide"></i>
         </div>
         <article class="menu__meal">
           <h2 class="menu__meal__step">Entrées</h2>
