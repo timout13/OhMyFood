@@ -110,7 +110,28 @@ $breakpoints: (
     }
   }
 }
-
+%spacing-home-page {
+  @each $_key, $_value in $breakpoints {
+    @if $_value > 1279px {
+      @include media-min($_key) {
+        padding: 51px calc($_value * 0.125) 40px calc($_value * 0.125) !important;
+      }
+    } @else {
+      @include media-min($_key) {
+        padding: 51px calc($_value * 0.1) 40px calc($_value * 0.1) !important;
+      }
+    }
+  }
+}
+%spacing-grid-home-page {
+  @each $_key, $_value in $breakpoints {
+    @include media-min($_key) {
+      grid-template-columns: repeat(2, 1fr) !important;
+      column-gap: calc($_value * 0.07) !important;
+      row-gap: calc($_value * 0.035) !important;
+    }
+  }
+}
 $gradient-heart: linear-gradient(
   193.33deg,
   $purple-gradient -11.44%,
@@ -132,6 +153,10 @@ $gradient-heart: linear-gradient(
   font-size: 24px;
   line-height: 28px;
   color: $black;
+  @include media-min("tablet-up") {
+    font-size: 40px;
+    line-height: 47px;
+  }
 }
 // Paragraph Text
 .section__paragraph {
@@ -327,7 +352,7 @@ $gradient-heart: linear-gradient(
       }
     }
     &__img {
-      align-self: center;
+      place-self: center;
       grid-column-start: 2;
     }
   }
@@ -360,16 +385,21 @@ main {
   }
   .functioning {
     padding: 48px 20px 68px 20px;
+    @extend %spacing-home-page;
     &__wrapper__card {
       display: flex;
       flex-direction: column;
       gap: 25.5px;
       align-items: flex-end;
+      padding-left: 12px;
+      @include media-min("tablet-up") {
+        flex-direction: row;
+      }
     }
     &__card {
-      width: 322.49px;
+      width: 100%;
       height: 72.38px;
-      background: $background-color;
+      background: #f6f6f6;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
       border-radius: 20px;
       display: flex;
@@ -383,6 +413,7 @@ main {
       }
       &__p {
         font-size: 16px;
+        padding-right: 10px;
         @include primary-font-regular();
       }
       &::before {
@@ -413,12 +444,14 @@ main {
   }
   .restaurants {
     padding: 54px 18px 66px 18px;
+    @extend %spacing-home-page;
     background-color: $background-color;
     &__wrapper__card {
       margin-top: 25px;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
       gap: 18px;
+      @extend %spacing-grid-home-page;
     }
     &__card {
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -479,6 +512,12 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  @include media-min("tablet-up") {
+    padding: 57px 44px;
+    flex-direction: row;
+    gap: 57px;
+    justify-content: flex-end;
+  }
   .footer__link {
     @include font-footer-link();
     i {
@@ -489,7 +528,11 @@ footer {
     }
   }
   svg {
+    width: 110px;
     margin-bottom: 9px;
+    @include media-min("tablet-up") {
+      order: 1;
+    }
     path {
       fill: white;
     }
