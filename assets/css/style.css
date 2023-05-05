@@ -157,20 +157,16 @@
   color: #101010;
 }
 
-.heart__animation--show:hover {
-  display: none;
+.heart__animation {
+  color: #101010;
+  height: fit-content;
 }
-.heart__animation--show:hover + .heart__animation--hide {
-  display: block !important;
-}
-.heart__animation--hide {
-  display: none !important;
-}
-.heart__animation--hide:hover {
-  display: block !important;
-}
-.heart__animation--hide:hover + .heart__animation--show {
-  display: none !important;
+.heart__animation:hover {
+  color: transparent;
+  font-weight: 900;
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 43.93%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .section-title-2 {
@@ -243,27 +239,47 @@
   margin-top: 5px;
 }
 .menu__card .menu__meal .meal__content {
-  position: relative;
+  display: grid;
+  grid-template-columns: 100% auto;
+  overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
   border-radius: 15.0431px;
+}
+.menu__card .menu__meal .meal__content:hover {
+  grid-template-columns: auto 59px;
+  transition: all 1s ease-in-out;
+}
+.menu__card .menu__meal .meal__content__contentwrapper {
+  position: relative;
   padding: 12px 15px;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 9fr 1fr;
   grid-template-areas: "h3 price" "subH3 price";
 }
-.menu__card .menu__meal .meal__content__title {
+.menu__card .menu__meal .meal__content__contentwrapper__title {
   grid-area: h3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
-.menu__card .menu__meal .meal__content__detail {
+.menu__card .menu__meal .meal__content__contentwrapper__detail {
   grid-area: subH3;
 }
-.menu__card .menu__meal .meal__content__price {
+.menu__card .menu__meal .meal__content__contentwrapper__price {
   grid-area: price;
   place-self: baseline;
   grid-row: 2;
   justify-self: flex-end;
+}
+.menu__card .menu__meal .meal__content__checkwrapper {
+  background-color: #99e2d0;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: #ffffff;
 }
 .menu__card .btn {
   align-self: center;
@@ -457,9 +473,6 @@ main .restaurants__card__content p {
   font-weight: 300;
   font-size: 17px;
   line-height: 20px;
-}
-main .restaurants .fa-heart {
-  color: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
 }
 
 footer {

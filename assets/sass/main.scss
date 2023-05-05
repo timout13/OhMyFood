@@ -47,14 +47,7 @@ $font-size-title: 24px;
   color: $black;
 }
 
-@mixin font-menu-meal-step() {
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: uppercase;
-}
+@import "base/typo";
 
 @mixin font-new-badge() {
   @include primary-font-regular();
@@ -135,7 +128,7 @@ $breakpoints: (
 $gradient-heart: linear-gradient(
   193.33deg,
   $purple-gradient -11.44%,
-  $pink-gradient 123.93%
+  $pink-gradient 43.93%
 );
 
 * {
@@ -205,22 +198,14 @@ $gradient-heart: linear-gradient(
 }
 // Like
 .heart__animation {
-  &--show {
-    &:hover {
-      display: none;
-    }
-    &:hover + .heart__animation--hide {
-      display: block !important;
-    }
-  }
-  &--hide {
-    display: none !important;
-    &:hover {
-      display: block !important;
-    }
-    &:hover + .heart__animation--show {
-      display: none !important;
-    }
+  color: $black;
+  height: fit-content;
+  &:hover {
+    color: transparent;
+    font-weight: 900;
+    background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 43.93%);
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 }
 
@@ -286,28 +271,48 @@ $gradient-heart: linear-gradient(
         }
       }
       .meal__content {
-        position: relative;
+        display: grid;
+        grid-template-columns: 100% auto;
+        overflow: hidden;
         background-color: $white;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
-        padding: 12px 15px;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 9fr 1fr;
-        grid-template-areas:
-          "h3 price"
-          "subH3 price";
-        &__title {
-          grid-area: h3;
+        &:hover {
+          grid-template-columns: auto 59px;
+          transition: all 1s ease-in-out;
         }
-        &__detail {
-          grid-area: subH3;
+        &__contentwrapper {
+          position: relative;
+          padding: 12px 15px;
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: 9fr 1fr;
+          grid-template-areas:
+            "h3 price"
+            "subH3 price";
+          &__title {
+            grid-area: h3;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+          }
+          &__detail {
+            grid-area: subH3;
+          }
+          &__price {
+            grid-area: price;
+            place-self: baseline;
+            grid-row: 2;
+            justify-self: flex-end;
+          }
         }
-        &__price {
-          grid-area: price;
-          place-self: baseline;
-          grid-row: 2;
-          justify-self: flex-end;
+        &__checkwrapper {
+          background-color: $blue;
+          display: grid;
+          place-items: center;
+          font-size: 20px;
+          color: $white;
         }
       }
     }
@@ -500,9 +505,6 @@ main {
           @include font-section-subtitle-2;
         }
       }
-    }
-    .fa-heart {
-      color: $gradient-heart;
     }
   }
 }
