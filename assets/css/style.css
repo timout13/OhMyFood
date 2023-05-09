@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* Function */
+/* Responsive */
 @media screen and (min-width: 768px) {
   .menu__card {
     margin: -40px 102.912px 0px 102.912px;
@@ -93,12 +99,6 @@
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* Composants */
 .section__title {
   font-family: "Roboto";
   font-style: normal;
@@ -158,6 +158,92 @@
   color: #101010;
 }
 
+.section-title-2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #101010;
+}
+
+/* Header */
+.header .navbar {
+  height: 63px;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+.header .navbar__link {
+  align-self: center;
+  margin-left: 20px;
+  color: #101010;
+}
+.header .navbar__link :visited {
+  color: #101010;
+}
+.header .navbar__link--hide {
+  display: none;
+}
+.header .navbar__img {
+  place-self: center;
+  grid-column-start: 2;
+}
+.header .location {
+  height: 50px;
+  background-color: #eaeaea;
+  padding: 15.5px 0 15.5px 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+footer {
+  padding: 25px 22px;
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    padding: 57px 44px;
+    flex-direction: row;
+    gap: 57px;
+    justify-content: flex-end;
+  }
+}
+footer .footer__link {
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+}
+footer .footer__link--font-regular {
+  font-weight: 500;
+}
+footer .footer__link i {
+  margin-right: 10px;
+}
+footer .footer__link .fa-handshake-angle {
+  font-size: 12px;
+}
+footer svg {
+  width: 110px;
+  margin-bottom: 9px;
+}
+@media screen and (min-width: 768px) {
+  footer svg {
+    order: 1;
+  }
+}
+footer svg path {
+  fill: white;
+}
+
+/* Composants */
 .heart__animation {
   color: #101010;
   height: fit-content;
@@ -168,15 +254,6 @@
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 43.93%);
   -webkit-background-clip: text;
   background-clip: text;
-}
-
-.section-title-2 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: #101010;
 }
 
 .menu__img {
@@ -410,38 +487,6 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
-/* Header */
-.header .navbar {
-  height: 63px;
-  display: grid;
-  position: relative;
-  grid-template-columns: 1fr 1fr 1fr;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-}
-.header .navbar__link {
-  align-self: center;
-  margin-left: 20px;
-  color: #101010;
-}
-.header .navbar__link :visited {
-  color: #101010;
-}
-.header .navbar__link--hide {
-  display: none;
-}
-.header .navbar__img {
-  place-self: center;
-  grid-column-start: 2;
-}
-.header .location {
-  height: 50px;
-  background-color: #eaeaea;
-  padding: 15.5px 0 15.5px 0;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-}
-
 /* INDEX PAGE */
 main .hero {
   background-color: #f6f6f6;
@@ -584,50 +629,6 @@ main .restaurants__card__content p {
   font-weight: 300;
   font-size: 17px;
   line-height: 20px;
-}
-
-footer {
-  padding: 25px 22px;
-  background-color: #353535;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-@media screen and (min-width: 768px) {
-  footer {
-    padding: 57px 44px;
-    flex-direction: row;
-    gap: 57px;
-    justify-content: flex-end;
-  }
-}
-footer .footer__link {
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-}
-footer .footer__link--font-regular {
-  font-weight: 500;
-}
-footer .footer__link i {
-  margin-right: 10px;
-}
-footer .footer__link .fa-handshake-angle {
-  font-size: 12px;
-}
-footer svg {
-  width: 110px;
-  margin-bottom: 9px;
-}
-@media screen and (min-width: 768px) {
-  footer svg {
-    order: 1;
-  }
-}
-footer svg path {
-  fill: white;
 }
 
 /*# sourceMappingURL=style.css.map */

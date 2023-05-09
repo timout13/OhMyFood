@@ -1,1 +1,32 @@
-
+footer {
+  padding: 25px 22px;
+  background-color: $grey;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  @include media-min("tablet-up") {
+    padding: 57px 44px;
+    flex-direction: row;
+    gap: 57px;
+    justify-content: flex-end;
+  }
+  .footer__link {
+    @include font-footer-link();
+    i {
+      margin-right: 10px;
+    }
+    .fa-handshake-angle {
+      font-size: 12px;
+    }
+  }
+  svg {
+    width: 110px;
+    margin-bottom: 9px;
+    @include media-min("tablet-up") {
+      order: 1;
+    }
+    path {
+      fill: white;
+    }
+  }
+}

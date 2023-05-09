@@ -1,55 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 @import "base/normalize";
 @import "base/typo";
-
-@mixin primary-font-regular() {
-  font-family: $primary-font;
-  font-weight: 500;
-}
-
-@mixin font-section-title-2() {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-}
-
-@mixin font-section-subtitle-2() {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 17px;
-  line-height: 20px;
-}
-
-@mixin font-menu-title() {
-  font-family: $logo-font;
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 41px;
-  color: $black;
-}
-
-@mixin font-new-badge() {
-  @include primary-font-regular();
-  font-size: 14px;
-  line-height: 16px;
-  color: $green-font;
-}
-
-@mixin font-footer-link() {
-  font-weight: 400;
-  font-family: $primary-font;
-  text-decoration: none;
-  color: $white;
-  font-size: 16px;
-  &--font-regular {
-    font-weight: 500;
-  }
-}
+@import "layouts/header";
+@import "layouts/footer";
 
 @mixin gradient-button($color-1, $color-2) {
   background: linear-gradient(200.64deg, $color-1 -5.2%, $color-2 110.74%);
@@ -63,123 +16,14 @@
     linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
 }
 
-$breakpoints: (
-  "tablet-up": 768px,
-  "tablet-down": 900px,
-  "desktop-up": 1024px,
-  "desktop-down": 1280px,
-  "widescreen-up": 1440px,
-);
-
-@mixin media-min($_key) {
-  @media screen and (min-width: map-get($breakpoints, $_key)) {
-    & {
-      @content;
-    }
-  }
-}
-
-%spacing-menu-page {
-  @each $_key, $_value in $breakpoints {
-    @include media-min($_key) {
-      margin: -40px calc($_value * 0.268 / 2) 0px calc($_value * 0.268 / 2);
-      padding: 51px calc($_value * 0.146) 40px calc($_value * 0.146) !important;
-    }
-  }
-}
-%spacing-home-page {
-  @each $_key, $_value in $breakpoints {
-    @if $_value > 1279px {
-      @include media-min($_key) {
-        padding: 51px calc($_value * 0.125) 40px calc($_value * 0.125) !important;
-      }
-    } @else {
-      @include media-min($_key) {
-        padding: 51px calc($_value * 0.1) 40px calc($_value * 0.1) !important;
-      }
-    }
-  }
-}
-%spacing-grid-home-page {
-  @each $_key, $_value in $breakpoints {
-    @include media-min($_key) {
-      grid-template-columns: repeat(2, 1fr) !important;
-      column-gap: calc($_value * 0.07) !important;
-      row-gap: calc($_value * 0.035) !important;
-    }
-  }
-}
 $gradient-heart: linear-gradient(
   193.33deg,
   $purple-gradient -11.44%,
   $pink-gradient 43.93%
 );
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 /* Composants */
 
-// Section Title Text
-.section__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  color: $black;
-  @include media-min("tablet-up") {
-    font-size: 40px;
-    line-height: 47px;
-  }
-}
-// Paragraph Text
-.section__paragraph {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-  color: $grey;
-}
-//Menu Text
-.menu__text {
-  @include primary-font-regular();
-  line-height: 18px;
-  counter-reset: $black;
-  &__price {
-    font-weight: 700;
-    font-size: 15px;
-  }
-  &__title {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-  }
-  &__detail {
-    font-weight: 300;
-    font-size: 15px;
-  }
-}
-
-// Button Text
-.btn__text {
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #c4c4c4;
-
-  &--white {
-    color: white;
-  }
-  &--black {
-    color: $black;
-  }
-}
 // Like
 .heart__animation {
   color: $black;
@@ -191,17 +35,6 @@ $gradient-heart: linear-gradient(
     -webkit-background-clip: text;
     background-clip: text;
   }
-}
-
-// Section Title 2 Text
-
-.section-title-2 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: $black;
 }
 
 //Menu
@@ -320,41 +153,6 @@ $gradient-heart: linear-gradient(
   &:hover {
     @include gradient-button-hover($purple-gradient, $pink-gradient);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
-  }
-}
-
-/* Header */
-
-.header {
-  .navbar {
-    height: 63px;
-    display: grid;
-    position: relative;
-    grid-template-columns: 1fr 1fr 1fr;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-    &__link {
-      align-self: center;
-      margin-left: 20px;
-      color: $black;
-      :visited {
-        color: $black;
-      }
-      &--hide {
-        display: none;
-      }
-    }
-    &__img {
-      place-self: center;
-      grid-column-start: 2;
-    }
-  }
-  .location {
-    height: 50px;
-    background-color: $grey-2;
-    padding: 15.5px 0 15.5px 0;
-    display: grid;
-    justify-content: center;
-    align-content: center;
   }
 }
 
@@ -492,38 +290,6 @@ main {
           @include font-section-subtitle-2;
         }
       }
-    }
-  }
-}
-footer {
-  padding: 25px 22px;
-  background-color: $grey;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  @include media-min("tablet-up") {
-    padding: 57px 44px;
-    flex-direction: row;
-    gap: 57px;
-    justify-content: flex-end;
-  }
-  .footer__link {
-    @include font-footer-link();
-    i {
-      margin-right: 10px;
-    }
-    .fa-handshake-angle {
-      font-size: 12px;
-    }
-  }
-  svg {
-    width: 110px;
-    margin-bottom: 9px;
-    @include media-min("tablet-up") {
-      order: 1;
-    }
-    path {
-      fill: white;
     }
   }
 }
