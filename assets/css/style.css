@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+/* Function */
 @media screen and (min-width: 768px) {
   .menu__card {
     margin: -40px 102.912px 0px 102.912px;
@@ -245,6 +246,116 @@
   background-color: #ffffff;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
   border-radius: 15.0431px;
+  animation: mealTile 1s forwards;
+  opacity: 0;
+}
+.menu__card .menu__meal .meal__content:nth-child(1) {
+  animation-delay: 0.25s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(2) {
+  animation-delay: 0.5s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(3) {
+  animation-delay: 0.75s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(4) {
+  animation-delay: 1s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(5) {
+  animation-delay: 1.25s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(6) {
+  animation-delay: 1.5s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(7) {
+  animation-delay: 1.75s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(8) {
+  animation-delay: 2s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.menu__card .menu__meal .meal__content:nth-child(9) {
+  animation-delay: 2.25s;
+}
+@keyframes mealTile {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 .menu__card .menu__meal .meal__content:hover {
   grid-template-columns: auto 59px;

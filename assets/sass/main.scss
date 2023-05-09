@@ -1,20 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
-
-$background-color: #f6f6f6;
-$primary-color: #9356dc;
-$blue: #99e2d0;
-$green-font: #008766;
-$white: #ffffff;
-$black: #101010;
-$grey: #353535;
-$pink-gradient: #ff79da;
-$purple-gradient: #9356dc;
-$grey-2: #eaeaea;
-$primary-2: #f5edff;
-$grey-tint-4: #7e7e7e;
-$primary-font: "Roboto", sans-serif;
-$logo-font: "Shrikhand", cursive;
-$font-size-title: 24px;
+@import "base/normalize";
+@import "base/typo";
 
 @mixin primary-font-regular() {
   font-family: $primary-font;
@@ -46,8 +32,6 @@ $font-size-title: 24px;
   line-height: 41px;
   color: $black;
 }
-
-@import "base/typo";
 
 @mixin font-new-badge() {
   @include primary-font-regular();
@@ -277,6 +261,9 @@ $gradient-heart: linear-gradient(
         background-color: $white;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
+        animation: mealTile 1s forwards;
+        opacity: 0;
+        @include animation-meal-tile();
         &:hover {
           grid-template-columns: auto 59px;
           transition: all 1s ease-in-out;

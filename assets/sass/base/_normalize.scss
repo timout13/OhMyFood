@@ -1,0 +1,34 @@
+$background-color: #f6f6f6;
+$primary-color: #9356dc;
+$blue: #99e2d0;
+$green-font: #008766;
+$white: #ffffff;
+$black: #101010;
+$grey: #353535;
+$pink-gradient: #ff79da;
+$purple-gradient: #9356dc;
+$grey-2: #eaeaea;
+$primary-2: #f5edff;
+$grey-tint-4: #7e7e7e;
+$primary-font: "Roboto", sans-serif;
+$logo-font: "Shrikhand", cursive;
+$font-size-title: 24px;
+
+/* Function */
+
+@mixin animation-meal-tile() {
+  @for $i from 1 to 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.25s;
+    }
+    @keyframes mealTile {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  }
+}
