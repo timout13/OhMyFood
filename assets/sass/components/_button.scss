@@ -1,0 +1,28 @@
+/* Init */
+@mixin gradient-button($color-1, $color-2) {
+  background: linear-gradient(356deg, $color-1 -5.2%, $color-2 110.74%);
+}
+@mixin gradient-button-hover($color-1, $color-2) {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15)
+    ),
+    linear-gradient(356deg, $color-1 -5.2%, $color-2 110.74%);
+}
+
+
+/* Style */
+.btn {
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  padding: 13px 18.75px;
+  @include gradient-button($purple-gradient, $pink-gradient);
+  &:hover {
+    @include gradient-button-hover($purple-gradient, $pink-gradient);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  }
+}

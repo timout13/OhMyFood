@@ -1,0 +1,21 @@
+/* Init */
+
+$gradient-heart: linear-gradient(
+  173deg,
+  $purple-gradient 18.56%,
+  $pink-gradient 93.93%
+);
+
+/* Style */
+
+.heart__animation {
+  color: $black;
+  height: fit-content;
+  &:hover {
+    color: transparent;
+    font-weight: 900;
+    background: $gradient-heart;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
