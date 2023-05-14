@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* Function */
 /* Responsive */
 @media screen and (min-width: 768px) {
@@ -200,7 +206,7 @@
 /* Loader Animation */
 .loaderwrapper {
   width: 100%;
-  height: calc(100vh - 181px - 144px);
+  height: calc(100vh - 345px);
   display: grid;
   place-items: center;
   padding: 10px;
@@ -321,11 +327,13 @@
 }
 
 footer {
+  flex-grow: 1;
   padding: 25px 22px;
   background-color: #353535;
   display: flex;
   flex-direction: column;
   gap: 7px;
+  height: 100%;
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -369,6 +377,7 @@ footer svg path {
   animation: 0.5s content-show 4s forwards;
   opacity: 0;
   height: 0;
+  overflow: hidden;
 }
 
 @keyframes content-show {

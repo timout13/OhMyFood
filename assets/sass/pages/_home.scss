@@ -4,6 +4,7 @@
   animation: 0.5s content-show 4s forwards;
   opacity: 0;
   height: 0;
+  overflow: hidden;
 }
 @keyframes content-show {
   from {
