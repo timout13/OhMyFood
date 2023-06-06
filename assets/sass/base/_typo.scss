@@ -29,7 +29,6 @@
 
 @mixin font-menu-title() {
   font-family: $logo-font;
-  font-size: 28px;
   font-style: italic;
   font-weight: 400;
   font-size: 28px;
@@ -81,7 +80,7 @@
 .menu__text {
   @include primary-font-regular();
   line-height: 18px;
-  counter-reset: $black;
+  color: $black;
   &__price {
     font-weight: 700;
     font-size: 15px;
@@ -93,7 +92,7 @@
   }
   &__detail {
     font-weight: 300;
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 

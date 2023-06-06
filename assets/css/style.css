@@ -12,6 +12,18 @@ body {
 
 /* Function */
 /* Responsive */
+@media screen and (min-width: 400px) {
+  .menu__card {
+    margin: -40px 53.6px 0px 53.6px;
+    padding: 51px 58.4px 40px 58.4px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .menu__card {
+    margin: -40px 77.184px 0px 77.184px;
+    padding: 51px 84.096px 40px 84.096px !important;
+  }
+}
 @media screen and (min-width: 768px) {
   .menu__card {
     margin: -40px 102.912px 0px 102.912px;
@@ -43,6 +55,16 @@ body {
   }
 }
 
+@media screen and (min-width: 400px) {
+  main .restaurants, main .functioning {
+    padding: 51px 40px 40px 40px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  main .restaurants, main .functioning {
+    padding: 51px 57.6px 40px 57.6px !important;
+  }
+}
 @media screen and (min-width: 768px) {
   main .restaurants, main .functioning {
     padding: 51px 76.8px 40px 76.8px !important;
@@ -69,6 +91,20 @@ body {
   }
 }
 
+@media screen and (min-width: 400px) {
+  main .restaurants__wrapper__card {
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 28px !important;
+    row-gap: 14px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  main .restaurants__wrapper__card {
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 40.32px !important;
+    row-gap: 20.16px !important;
+  }
+}
 @media screen and (min-width: 768px) {
   main .restaurants__wrapper__card {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -133,7 +169,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   line-height: 18px;
-  counter-reset: #101010;
+  color: #101010;
 }
 .menu__text__price {
   font-weight: 700;
@@ -146,7 +182,7 @@ body {
 }
 .menu__text__detail {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .btn__text {
@@ -561,20 +597,31 @@ main .restaurants__card__content p {
   flex-direction: column;
   gap: 40px;
 }
+@media screen and (min-width: 400px) {
+  .menu__card {
+    padding: 32px 13px 40px 13px !important;
+  }
+}
 .menu__card__title {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  column-gap: 50px;
+  column-gap: 20px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 400px) {
   .menu__card__title {
+    column-gap: 0px;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 576px) {
+  .menu__card__title {
+    column-gap: 50px;
     justify-content: center;
   }
 }
 .menu__card__title__text {
   font-family: "Shrikhand", cursive;
-  font-size: 28px;
   font-style: italic;
   font-weight: 400;
   font-size: 28px;
@@ -738,12 +785,14 @@ main .restaurants__card__content p {
 .menu__card .menu__meal .meal__content__contentwrapper__title {
   grid-area: h3;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu__card .menu__meal .meal__content__contentwrapper__detail {
   grid-area: subH3;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu__card .menu__meal .meal__content__contentwrapper__price {
   grid-area: price;
