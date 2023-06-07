@@ -529,7 +529,6 @@ main .restaurants__card {
   background: #ffffff;
   position: relative;
   height: 251px;
-  overflow-y: scroll;
 }
 main .restaurants__card a {
   text-decoration: none;
