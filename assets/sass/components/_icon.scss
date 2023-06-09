@@ -11,11 +11,27 @@ $gradient-heart: linear-gradient(
 .heart__animation {
   color: $black;
   height: fit-content;
+  position: relative;
+  &::after {
+    content: "\f004";
+    position: absolute;
+    left: 0;
+    height: 0px;
+    transition: height 1s ease-in-out;
+  }
   &:hover {
-    color: transparent;
-    font-weight: 900;
-    background: $gradient-heart;
-    -webkit-background-clip: text;
-    background-clip: text;
+    &::after {
+      content: "\f004";
+      z-index: 0;
+      position: absolute;
+      left: 0;
+      color: transparent;
+      background: linear-gradient(173deg, #9356dc 18.56%, #ff79da 93.93%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      height: 25px;
+      font-weight: 900;
+      transition: height 1s ease-in-out;
+    }
   }
 }

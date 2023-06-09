@@ -4,6 +4,8 @@
     width: 100%;
     position: relative;
     z-index: 1;
+    max-height: 500px;
+    object-fit: cover;
   }
   &__card {
     background-color: $background-color;

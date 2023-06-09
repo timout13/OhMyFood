@@ -230,13 +230,27 @@ body {
 .heart__animation {
   color: #101010;
   height: fit-content;
+  position: relative;
 }
-.heart__animation:hover {
+.heart__animation::after {
+  content: "\f004";
+  position: absolute;
+  left: 0;
+  height: 0px;
+  transition: height 1s ease-in-out;
+}
+.heart__animation:hover::after {
+  content: "\f004";
+  z-index: 0;
+  position: absolute;
+  left: 0;
   color: transparent;
-  font-weight: 900;
   background: linear-gradient(173deg, #9356dc 18.56%, #ff79da 93.93%);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  height: 25px;
+  font-weight: 900;
+  transition: height 1s ease-in-out;
 }
 
 /* Loader Animation */
@@ -584,6 +598,8 @@ main .restaurants__card__content p {
   width: 100%;
   position: relative;
   z-index: 1;
+  max-height: 500px;
+  object-fit: cover;
 }
 .menu__card {
   background-color: #f6f6f6;
